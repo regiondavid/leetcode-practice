@@ -1,3 +1,10 @@
+### 题目
+>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+
+>You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+
+>Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+>Output: 7 -> 0 -> 8
 ### 解法一
 ``` js
 /**
@@ -84,7 +91,6 @@ var addTwoNumbers = function(l1, l2) {
     var num1 = parseInt(l3.reduce(function(val, rss) {
         return val.toString() + rss.toString();
     }));
-    //return num1;
     var num2 = parseInt(l4.reduce(function(val, rss) {
         return val.toString() + rss.toString();
     }));
@@ -99,5 +105,8 @@ var addTwoNumbers = function(l1, l2) {
 ```
 ### 注：
 解法一 accept；
+解法一其实还可以再简化，直接不用数组了，直接通过next去判断然后替换掉之前的。
 
 解法二理论上是可以的，在数据量较小的时候结果正确。但是当数据量增多时，会导致转化成的num自动转化成类似`123123e3112321`的形式，导致最后反转成字符串的时候不是我们所预期的那样。
+
+PS：争取把频率提高到一周两道！
